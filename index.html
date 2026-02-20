@@ -44,7 +44,7 @@ nav a{
     font-weight:500;
 }
 
-/* BOTÓN */
+/* BOTONES */
 .btn{
     background:#0f3d2e;
     color:white !important;
@@ -52,91 +52,15 @@ nav a{
     border-radius:6px;
     text-decoration:none;
     font-weight:600;
-    cursor:pointer;
     display:inline-block;
-}
-
-/* DROPDOWN */
-.dropdown{
-    position:relative;
-}
-
-.dropdown-content{
-    display:none;
-    position:absolute;
-    top:110%;
-    left:0;
-    background:white;
-    min-width:220px;
-    border-radius:10px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    overflow:hidden;
-}
-
-.dropdown-content a,
-.dropdown-content span{
-    display:block;
-    padding:12px;
-    color:#0f3d2e;
-    text-decoration:none;
-}
-
-.dropdown-content a:hover{
-    background:#f4f4f4;
-}
-
-.dropdown:hover .dropdown-content{
-    display:block;
 }
 
 /* HERO */
 .hero{
-    background:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e') center/cover no-repeat;
-    padding:140px 10%;
+    background:#0f3d2e;
+    padding:100px 10%;
     color:white;
-    position:relative;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.5);
-    z-index:1;
-}
-
-.hero-content{
-    position:relative;
-    max-width:600px;
-    z-index:2;
-}
-
-.hero h2{
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-/* SECCIONES */
-.section{
-    padding:80px 10%;
-}
-
-.flex{
-    display:flex;
-    align-items:center;
-    gap:50px;
-    flex-wrap:wrap;
-}
-
-.flex img{
-    width:100%;
-    max-width:450px;
-    border-radius:12px;
-}
-
-.section h3{
-    color:#0f3d2e;
-    font-size:30px;
+    text-align:center;
 }
 
 /* FORMULARIO */
@@ -159,6 +83,7 @@ form input, form select{
     margin-bottom:15px;
     border:none;
     border-radius:6px;
+    font-size:15px;
 }
 
 form button{
@@ -177,13 +102,6 @@ footer{
     text-align:center;
     padding:30px;
 }
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .hero h2{
-        font-size:28px;
-    }
-}
 </style>
 </head>
 
@@ -191,63 +109,33 @@ footer{
 
 <header>
 <h1>Relief Crediticio</h1>
-
 <nav>
 <a href="#">Inicio</a>
-
-<div class="dropdown">
-<a href="#" class="btn">Contáctanos ▾</a>
-<div class="dropdown-content">
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito" target="_blank">📱 WhatsApp</a>
-<a href="tel:+576023125831">📞 Teléfono fijo: 6023125831</a>
-<span>📧 reliefcrediticio@gmail.com</span>
-</div>
-</div>
-
-</nav>
-</header>
-
-<section class="hero">
-<div class="hero-content">
-<h2>Soluciones de crédito diseñadas para ti</h2>
-<p>Créditos para pensionados, empleados, independientes y reportados o no reportados.</p>
-
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito"
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito" 
 class="btn" target="_blank">
 Solicitar ahora
 </a>
-
-</div>
-</section>
-
-<section class="section">
-<div class="flex">
-<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Pensionados felices">
-<div>
-<h3>Crédito para Pensionados</h3>
-<p>Tasas desde 1.12% y desembolsos hasta 300.000.000.</p>
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20pensionados."
-class="btn" target="_blank">Más información</a>
-</div>
-</div>
-</section>
+</nav>
+</header>
 
 <section class="form-section">
 <h2>Solicita tu crédito ahora</h2>
 
-<form onsubmit="enviarWhatsApp(); return false;">
+<form id="creditoForm">
+
 <input type="text" id="nombre" placeholder="Nombre completo" required>
 <input type="tel" id="telefono" placeholder="Teléfono" required>
 <input type="number" id="monto" placeholder="Monto deseado" required>
 
 <select id="tipo" required>
 <option value="">Tipo de crédito</option>
-<option>Pensionado</option>
-<option>Consumo</option>
-<option>Libre inversión</option>
+<option value="Pensionado">Pensionado</option>
+<option value="Consumo">Consumo</option>
+<option value="Libre inversión">Libre inversión</option>
 </select>
 
 <button type="submit">QUIERO MI CRÉDITO</button>
+
 </form>
 </section>
 
@@ -256,11 +144,26 @@ class="btn" target="_blank">Más información</a>
 </footer>
 
 <script>
-function enviarWhatsApp() {
+document.getElementById("creditoForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
     var nombre = document.getElementById("nombre").value;
     var telefono = document.getElementById("telefono").value;
     var monto = document.getElementById("monto").value;
     var tipo = document.getElementById("tipo").value;
 
-    var mensaje = "Hola, quiero solicitar un crédito.%0A%0A" +
-                  "Nombre: " +
+    var mensaje = "Hola quiero información sobre un crédito.%0A%0A" +
+                  "Nombre: " + nombre + "%0A" +
+                  "Teléfono: " + telefono + "%0A" +
+                  "Monto deseado: " + monto + "%0A" +
+                  "Tipo de crédito: " + tipo;
+
+    var numero = "573186972557";
+    var url = "https://wa.me/" + numero + "?text=" + mensaje;
+
+    window.open(url, "_blank");
+});
+</script>
+
+</body>
+</html>
