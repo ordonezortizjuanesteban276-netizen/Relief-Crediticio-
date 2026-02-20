@@ -9,98 +9,178 @@
 
 <style>
 body{
-    margin:0;
-    font-family:'Poppins', sans-serif;
-    background:#f5f7fa;
+margin:0;
+font-family:'Poppins', sans-serif;
+background:#f5f7fa;
 }
 
 /* HEADER */
 header{
-    background:white;
-    padding:20px 10%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    position:relative;
-    z-index:1000;
+background:white;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:relative;
+z-index:1000;
 }
 
 header h1{
-    color:#0f3d2e;
-    margin:0;
+color:#0f3d2e;
+margin:0;
 }
 
-/* NAV */
 nav{
-    display:flex;
-    gap:25px;
-    align-items:center;
+display:flex;
+gap:25px;
+align-items:center;
 }
 
 nav a{
-    text-decoration:none;
-    color:#0f3d2e;
-    font-weight:500;
+text-decoration:none;
+color:#0f3d2e;
+font-weight:500;
 }
 
 /* BOTONES */
 .btn{
-    background:#0f3d2e;
-    color:white !important;
-    padding:12px 25px;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:600;
-    display:inline-block;
+background:#0f3d2e;
+color:white !important;
+padding:12px 25px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown{
+position:relative;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+top:110%;
+left:0;
+background:white;
+min-width:220px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+overflow:hidden;
+}
+
+.dropdown-content a,
+.dropdown-content span{
+display:block;
+padding:12px;
+color:#0f3d2e;
+text-decoration:none;
+}
+
+.dropdown-content a:hover{
+background:#f4f4f4;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
 }
 
 /* HERO */
 .hero{
-    background:#0f3d2e;
-    padding:100px 10%;
-    color:white;
-    text-align:center;
+background:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e') center/cover no-repeat;
+padding:140px 10%;
+color:white;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.5);
+z-index:1;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:600px;
+}
+
+.hero h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+/* SECCION */
+.section{
+padding:80px 10%;
+}
+
+.flex{
+display:flex;
+align-items:center;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.flex img{
+width:100%;
+max-width:450px;
+border-radius:12px;
+}
+
+.section h3{
+color:#0f3d2e;
+font-size:30px;
 }
 
 /* FORMULARIO */
 .form-section{
-    background:#0f3d2e;
-    padding:80px 10%;
-    color:white;
-    text-align:center;
+background:#0f3d2e;
+padding:80px 10%;
+color:white;
+text-align:center;
 }
 
 form{
-    max-width:500px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
 }
 
 form input, form select{
-    padding:12px;
-    margin-bottom:15px;
-    border:none;
-    border-radius:6px;
-    font-size:15px;
+padding:12px;
+margin-bottom:15px;
+border:none;
+border-radius:6px;
 }
 
 form button{
-    padding:15px;
-    background:#f4b400;
-    border:none;
-    font-weight:600;
-    border-radius:6px;
-    cursor:pointer;
+padding:15px;
+background:#f4b400;
+border:none;
+font-weight:600;
+border-radius:6px;
+cursor:pointer;
 }
 
 /* FOOTER */
 footer{
-    background:#09271d;
-    color:white;
-    text-align:center;
-    padding:30px;
+background:#09271d;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+@media(max-width:768px){
+.hero h2{
+font-size:28px;
+}
 }
 </style>
 </head>
@@ -109,33 +189,63 @@ footer{
 
 <header>
 <h1>Relief Crediticio</h1>
+
 <nav>
 <a href="#">Inicio</a>
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito" 
+
+<div class="dropdown">
+<a href="#" class="btn">Contáctanos ▾</a>
+<div class="dropdown-content">
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito" target="_blank">📱 WhatsApp</a>
+<a href="tel:+576023125831">☎ Teléfono fijo: 6023125831</a>
+<span>📧 reliefcrediticio@gmail.com</span>
+</div>
+</div>
+
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Soluciones de crédito diseñadas para ti</h2>
+<p>Créditos para pensionados, empleados, independientes y reportados o no reportados.</p>
+
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito"
 class="btn" target="_blank">
 Solicitar ahora
 </a>
-</nav>
-</header>
+
+</div>
+</section>
+
+<section class="section">
+<div class="flex">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Pensionados felices">
+<div>
+<h3>Crédito para Pensionados</h3>
+<p>Tasas desde 1.12% y desembolsos hasta 300.000.000.</p>
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20pensionados."
+class="btn" target="_blank">Más información</a>
+</div>
+</div>
+</section>
 
 <section class="form-section">
 <h2>Solicita tu crédito ahora</h2>
 
 <form id="creditoForm">
-
 <input type="text" id="nombre" placeholder="Nombre completo" required>
 <input type="tel" id="telefono" placeholder="Teléfono" required>
 <input type="number" id="monto" placeholder="Monto deseado" required>
 
 <select id="tipo" required>
 <option value="">Tipo de crédito</option>
-<option value="Pensionado">Pensionado</option>
-<option value="Consumo">Consumo</option>
-<option value="Libre inversión">Libre inversión</option>
+<option>Pensionado</option>
+<option>Consumo</option>
+<option>Libre inversión</option>
 </select>
 
 <button type="submit">QUIERO MI CRÉDITO</button>
-
 </form>
 </section>
 
@@ -145,23 +255,23 @@ Solicitar ahora
 
 <script>
 document.getElementById("creditoForm").addEventListener("submit", function(e){
-    e.preventDefault();
+e.preventDefault();
 
-    var nombre = document.getElementById("nombre").value;
-    var telefono = document.getElementById("telefono").value;
-    var monto = document.getElementById("monto").value;
-    var tipo = document.getElementById("tipo").value;
+var nombre = document.getElementById("nombre").value;
+var telefono = document.getElementById("telefono").value;
+var monto = document.getElementById("monto").value;
+var tipo = document.getElementById("tipo").value;
 
-    var mensaje = "Hola quiero información sobre un crédito.%0A%0A" +
-                  "Nombre: " + nombre + "%0A" +
-                  "Teléfono: " + telefono + "%0A" +
-                  "Monto deseado: " + monto + "%0A" +
-                  "Tipo de crédito: " + tipo;
+var mensaje = "Hola quiero información sobre un crédito.%0A%0A" +
+"Nombre: " + nombre + "%0A" +
+"Teléfono: " + telefono + "%0A" +
+"Monto deseado: " + monto + "%0A" +
+"Tipo de crédito: " + tipo;
 
-    var numero = "573186972557";
-    var url = "https://wa.me/" + numero + "?text=" + mensaje;
+var numero = "573186972557";
+var url = "https://wa.me/" + numero + "?text=" + mensaje;
 
-    window.open(url, "_blank");
+window.open(url, "_blank");
 });
 </script>
 
