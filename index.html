@@ -11,98 +11,100 @@
 body{
     margin:0;
     font-family:'Poppins', sans-serif;
-    background:#f4f4f4;
+    background:#f5f7fa;
 }
 
 header{
-    background:#0f3d2e;
+    background:white;
     padding:20px 10%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    color:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 header h1{
+    color:#0f3d2e;
     margin:0;
 }
 
 nav{
     display:flex;
+    gap:25px;
     align-items:center;
-    gap:20px;
 }
 
 nav a{
-    color:white;
     text-decoration:none;
-}
-
-.dropdown{
-    position:relative;
-}
-
-.dropdown-content{
-    display:none;
-    position:absolute;
-    background:white;
-    min-width:220px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    border-radius:6px;
-    overflow:hidden;
-}
-
-.dropdown-content a{
-    display:block;
-    padding:12px;
     color:#0f3d2e;
-    text-decoration:none;
-}
-
-.dropdown-content a:hover{
-    background:#f4f4f4;
-}
-
-.dropdown:hover .dropdown-content{
-    display:block;
-}
-
-.hero{
-    background:linear-gradient(rgba(15,61,46,0.85), rgba(15,61,46,0.85));
-    color:white;
-    padding:100px 10%;
-}
-
-.hero h2{
-    font-size:40px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:18px;
-    margin-bottom:30px;
+    font-weight:500;
 }
 
 .btn{
-    display:inline-block;
-    padding:15px 30px;
-    background:#f4b400;
-    color:#0f3d2e;
-    font-weight:600;
-    text-decoration:none;
+    background:#0f3d2e;
+    color:white;
+    padding:12px 25px;
     border-radius:6px;
-    margin-right:15px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.hero{
+    background:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e') center/cover no-repeat;
+    padding:140px 10%;
+    color:white;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+    position:relative;
+    max-width:600px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:20px;
 }
 
 .section{
     padding:80px 10%;
-    text-align:center;
+}
+
+.flex{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.flex img{
+    width:100%;
+    max-width:450px;
+    border-radius:12px;
+}
+
+.section h3{
+    color:#0f3d2e;
+    font-size:30px;
+}
+
+.highlight{
+    color:#0f3d2e;
+    font-weight:600;
 }
 
 .form-section{
     background:#0f3d2e;
     padding:80px 10%;
     color:white;
+    text-align:center;
 }
 
 form{
@@ -116,7 +118,7 @@ form input, form select{
     padding:12px;
     margin-bottom:15px;
     border:none;
-    border-radius:5px;
+    border-radius:6px;
 }
 
 form button{
@@ -124,7 +126,7 @@ form button{
     background:#f4b400;
     border:none;
     font-weight:600;
-    border-radius:5px;
+    border-radius:6px;
     cursor:pointer;
 }
 
@@ -136,18 +138,8 @@ footer{
 }
 
 @media(max-width:768px){
-    header{
-        flex-direction:column;
-        text-align:center;
-    }
-
     .hero h2{
         font-size:28px;
-    }
-
-    .btn{
-        display:block;
-        margin-bottom:15px;
     }
 }
 </style>
@@ -157,34 +149,42 @@ footer{
 
 <header>
 <h1>Relief Crediticio</h1>
-
 <nav>
 <a href="#">Inicio</a>
-
-<div class="dropdown">
-<a href="#">Contacto ▾</a>
-<div class="dropdown-content">
-<a href="https://wa.me/573186972557" target="_blank">📱 WhatsApp</a>
-<a href="tel:+576023125831">📞 Teléfono fijo: 6023125831</a>
-<a href="#">📧 reliefcrediticio@gmail.com</a>
-</div>
-</div>
-
+<a href="https://wa.me/573186972557" class="btn" target="_blank">Contáctanos</a>
 </nav>
 </header>
 
 <section class="hero">
-<h2>Tu crédito fácil, rápido y sin complicaciones</h2>
+<div class="hero-content">
+<h2>Soluciones de crédito diseñadas para ti</h2>
 <p>Créditos para pensionados, empleados, independientes y reportados o no reportados.</p>
-
 <a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito." class="btn" target="_blank">Solicitar ahora</a>
-
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito." class="btn" target="_blank">Simular mi crédito</a>
+</div>
 </section>
 
 <section class="section">
-<h2>¿Por qué elegirnos?</h2>
-<p>Tasas desde 1.12% | Desembolsos hasta 300.000.000 | Proceso rápido y seguro</p>
+<div class="flex">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Pensionados felices">
+<div>
+<h3>Crédito para Pensionados</h3>
+<p>Tasas competitivas desde <span class="highlight">1.12%</span> y desembolsos hasta <span class="highlight">300.000.000</span>.</p>
+<p>Proceso sencillo, rápido y con acompañamiento personalizado.</p>
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20pensionados." class="btn" target="_blank">Más información</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="flex">
+<div>
+<h3>Crédito de Consumo</h3>
+<p>Ideal para libre inversión, compra de cartera o necesidades personales.</p>
+<p>Aplican reportados y no reportados.</p>
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20de%20consumo." class="btn" target="_blank">Solicitar crédito</a>
+</div>
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d" alt="Trabajadores felices">
+</div>
 </section>
 
 <section class="form-section">
@@ -224,7 +224,6 @@ function enviarWhatsApp() {
                   "Tipo de crédito: " + tipo;
 
     var numero = "573186972557";
-
     var url = "https://wa.me/" + numero + "?text=" + mensaje;
 
     window.open(url, "_blank");
@@ -233,5 +232,3 @@ function enviarWhatsApp() {
 
 </body>
 </html>
-
-
