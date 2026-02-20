@@ -53,6 +53,7 @@ nav a{
     text-decoration:none;
     font-weight:600;
     cursor:pointer;
+    display:inline-block;
 }
 
 /* DROPDOWN */
@@ -101,11 +102,13 @@ nav a{
     position:absolute;
     inset:0;
     background:rgba(0,0,0,0.5);
+    z-index:1;
 }
 
 .hero-content{
     position:relative;
     max-width:600px;
+    z-index:2;
 }
 
 .hero h2{
@@ -196,7 +199,7 @@ footer{
 <a href="#" class="btn">Contáctanos ▾</a>
 <div class="dropdown-content">
 <a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito" target="_blank">📱 WhatsApp</a>
-<a href="tel:+576023125831">☎ Teléfono fijo: 6023125831</a>
+<a href="tel:+576023125831">📞 Teléfono fijo: 6023125831</a>
 <span>📧 reliefcrediticio@gmail.com</span>
 </div>
 </div>
@@ -209,7 +212,7 @@ footer{
 <h2>Soluciones de crédito diseñadas para ti</h2>
 <p>Créditos para pensionados, empleados, independientes y reportados o no reportados.</p>
 
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito" 
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito"
 class="btn" target="_blank">
 Solicitar ahora
 </a>
@@ -223,7 +226,8 @@ Solicitar ahora
 <div>
 <h3>Crédito para Pensionados</h3>
 <p>Tasas desde 1.12% y desembolsos hasta 300.000.000.</p>
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20pensionados." class="btn" target="_blank">Más información</a>
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20pensionados."
+class="btn" target="_blank">Más información</a>
 </div>
 </div>
 </section>
@@ -259,17 +263,4 @@ function enviarWhatsApp() {
     var tipo = document.getElementById("tipo").value;
 
     var mensaje = "Hola, quiero solicitar un crédito.%0A%0A" +
-                  "Nombre: " + nombre + "%0A" +
-                  "Teléfono: " + telefono + "%0A" +
-                  "Monto: " + monto + "%0A" +
-                  "Tipo de crédito: " + tipo;
-
-    var numero = "573186972557";
-    var url = "https://wa.me/" + numero + "?text=" + mensaje;
-
-    window.open(url, "_blank");
-}
-</script>
-
-</body>
-</html>
+                  "Nombre: " +
