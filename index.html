@@ -14,6 +14,7 @@ body{
     background:#f5f7fa;
 }
 
+/* HEADER */
 header{
     background:white;
     padding:20px 10%;
@@ -28,6 +29,7 @@ header h1{
     margin:0;
 }
 
+/* NAV */
 nav{
     display:flex;
     gap:25px;
@@ -40,15 +42,51 @@ nav a{
     font-weight:500;
 }
 
+/* BOTÓN */
 .btn{
     background:#0f3d2e;
-    color:white;
+    color:white !important;
     padding:12px 25px;
     border-radius:6px;
     text-decoration:none;
     font-weight:600;
+    cursor:pointer;
 }
 
+/* DROPDOWN COMO EL ANTERIOR */
+.dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:white;
+    min-width:220px;
+    border-radius:6px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    overflow:hidden;
+}
+
+.dropdown-content a,
+.dropdown-content span{
+    display:block;
+    padding:12px;
+    color:#0f3d2e;
+    text-decoration:none;
+}
+
+.dropdown-content a:hover{
+    background:#f4f4f4;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+/* HERO */
 .hero{
     background:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e') center/cover no-repeat;
     padding:140px 10%;
@@ -73,6 +111,7 @@ nav a{
     margin-bottom:20px;
 }
 
+/* SECCIONES */
 .section{
     padding:80px 10%;
 }
@@ -95,11 +134,7 @@ nav a{
     font-size:30px;
 }
 
-.highlight{
-    color:#0f3d2e;
-    font-weight:600;
-}
-
+/* FORMULARIO */
 .form-section{
     background:#0f3d2e;
     padding:80px 10%;
@@ -130,6 +165,7 @@ form button{
     cursor:pointer;
 }
 
+/* FOOTER */
 footer{
     background:#09271d;
     color:white;
@@ -137,6 +173,7 @@ footer{
     padding:30px;
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
     .hero h2{
         font-size:28px;
@@ -149,6 +186,7 @@ footer{
 
 <header>
 <h1>Relief Crediticio</h1>
+
 <nav>
 <a href="#">Inicio</a>
 
@@ -156,7 +194,7 @@ footer{
 <a href="#" class="btn">Contáctanos ▾</a>
 <div class="dropdown-content">
 <a href="https://wa.me/573186972557" target="_blank">📱 WhatsApp</a>
-<a href="tel:+576023125831">📞 Teléfono fijo: 6023125831</a>
+<a href="tel:+576023125831">☎ Teléfono fijo: 6023125831</a>
 <span>📧 reliefcrediticio@gmail.com</span>
 </div>
 </div>
@@ -177,22 +215,9 @@ footer{
 <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Pensionados felices">
 <div>
 <h3>Crédito para Pensionados</h3>
-<p>Tasas competitivas desde <span class="highlight">1.12%</span> y desembolsos hasta <span class="highlight">300.000.000</span>.</p>
-<p>Proceso sencillo, rápido y con acompañamiento personalizado.</p>
+<p>Tasas desde 1.12% y desembolsos hasta 300.000.000.</p>
 <a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20pensionados." class="btn" target="_blank">Más información</a>
 </div>
-</div>
-</section>
-
-<section class="section">
-<div class="flex">
-<div>
-<h3>Crédito de Consumo</h3>
-<p>Ideal para libre inversión, compra de cartera o necesidades personales.</p>
-<p>Aplican reportados y no reportados.</p>
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20de%20consumo." class="btn" target="_blank">Solicitar crédito</a>
-</div>
-<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d" alt="Trabajadores felices">
 </div>
 </section>
 
@@ -241,4 +266,3 @@ function enviarWhatsApp() {
 
 </body>
 </html>
-
