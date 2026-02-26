@@ -53,11 +53,6 @@ text-decoration:none;
 font-weight:600;
 display:inline-block;
 cursor:pointer;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#145c43;
 }
 
 /* DROPDOWN */
@@ -93,16 +88,18 @@ background:#f4f4f4;
 display:block;
 }
 
-/* ================= SLIDER ================= */
-
+/* SLIDER */
 .slider{
 background:linear-gradient(90deg,#0f3d2e,#1b7a5a);
 color:white;
+padding:80px 10%;
+position:relative;
 overflow:hidden;
 }
 
 .slides{
 display:flex;
+width:200%;
 transition:transform 0.6s ease;
 }
 
@@ -111,35 +108,27 @@ min-width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
+gap:40px;
 }
 
 .slide-text{
-width:50%;
-padding:100px 10%;
-z-index:2;
+max-width:500px;
 }
 
 .slide h2{
-font-size:42px;
+font-size:38px;
 margin-bottom:20px;
 }
 
-.slide-img{
-width:50%;
-height:500px;
-}
-
 .slide-img img{
-width:100%;
-height:100%;
+width:400px;
+border-radius:20px;
 object-fit:cover;
 }
 
-/* DOTS */
 .slider-dots{
 text-align:center;
-padding:20px;
-background:linear-gradient(90deg,#0f3d2e,#1b7a5a);
+margin-top:20px;
 }
 
 .dot{
@@ -154,6 +143,33 @@ cursor:pointer;
 
 .dot.active{
 background:white;
+}
+
+/* HERO */
+.hero{
+background:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e') center/cover no-repeat;
+padding:140px 10%;
+color:white;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.5);
+z-index:1;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:600px;
+}
+
+.hero h2{
+font-size:42px;
+margin-bottom:20px;
 }
 
 /* SECCION */
@@ -218,24 +234,17 @@ text-align:center;
 padding:30px;
 }
 
-/* RESPONSIVE */
 @media(max-width:768px){
-
 .slide{
 flex-direction:column;
-}
-
-.slide-text{
-width:100%;
-padding:60px 20px;
 text-align:center;
 }
-
-.slide-img{
+.slide-img img{
 width:100%;
-height:300px;
 }
-
+.hero h2{
+font-size:28px;
+}
 }
 </style>
 </head>
@@ -256,7 +265,6 @@ height:300px;
 <a href="tel:+576023125831">☎ Teléfono fijo: 6023125831</a>
 <span>📧 reliefcrediticio@gmail.com</span>
 </div>
-
 </div>
 </nav>
 </header>
@@ -265,27 +273,29 @@ height:300px;
 <section class="slider">
 <div class="slides">
 
+<!-- SLIDE 1 FAMILIA -->
 <div class="slide">
 <div class="slide-text">
 <h2>Este año cumple tus propósitos</h2>
-<p>Solicita tu crédito y obtén la tranquilidad financiera que mereces.</p>
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito" 
+<p>Créditos familiares para construir tranquilidad y estabilidad.</p>
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20familiar"
 class="btn" target="_blank">Pídelo ahora</a>
 </div>
 <div class="slide-img">
-<img src="pensionada.png" alt="Pensionada feliz">
+<img src="familia.png" alt="Familia feliz">
 </div>
 </div>
 
+<!-- SLIDE 2 AMIGOS -->
 <div class="slide">
 <div class="slide-text">
-<h2>Impulsa tu futuro laboral</h2>
-<p>Créditos para empleados e independientes con tasas desde 1.12%.</p>
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20empleados" 
+<h2>Impulsa tu futuro con confianza</h2>
+<p>Créditos para empleados e independientes desde 1.12%.</p>
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20empleados"
 class="btn" target="_blank">Solicítalo hoy</a>
 </div>
 <div class="slide-img">
-<img src="https://images.unsplash.com/photo-1556742400-b5c7c5123a15" alt="Empleado feliz">
+<img src="amigos.png" alt="Amigos felices">
 </div>
 </div>
 
@@ -297,37 +307,17 @@ class="btn" target="_blank">Solicítalo hoy</a>
 </div>
 </section>
 
-<!-- SECCIÓN PENSIONADOS -->
-<section class="section">
-<div class="flex">
-<img src="pensionada.png" alt="Pensionada feliz">
-<div>
-<h3>Crédito para Pensionados</h3>
-<p>Tasas desde 1.12% y desembolsos hasta 300.000.000.</p>
-<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20crédito%20para%20pensionados." 
-class="btn" target="_blank">Más información</a>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h2>Soluciones de crédito diseñadas para ti</h2>
+<p>Créditos para pensionados, empleados, independientes y reportados o no reportados.</p>
+
+<a href="https://wa.me/573186972557?text=Hola%20quiero%20información%20sobre%20un%20crédito"
+class="btn" target="_blank">
+Solicitar ahora
+</a>
 </div>
-</div>
-</section>
-
-<!-- FORMULARIO -->
-<section class="form-section">
-<h2>Solicita tu crédito ahora</h2>
-
-<form id="creditoForm">
-<input type="text" id="nombre" placeholder="Nombre completo" required>
-<input type="tel" id="telefono" placeholder="Teléfono" required>
-<input type="number" id="monto" placeholder="Monto deseado" required>
-
-<select id="tipo" required>
-<option value="">Tipo de crédito</option>
-<option>Pensionado</option>
-<option>Consumo</option>
-<option>Libre inversión</option>
-</select>
-
-<button type="submit">QUIERO MI CRÉDITO</button>
-</form>
 </section>
 
 <footer>
@@ -335,8 +325,6 @@ class="btn" target="_blank">Más información</a>
 </footer>
 
 <script>
-
-/* Dropdown */
 function toggleDropdown(event){
 event.preventDefault();
 document.getElementById("contactDropdown").classList.toggle("active");
@@ -349,28 +337,10 @@ dropdown.classList.remove("active");
 }
 });
 
-/* Formulario WhatsApp */
-document.getElementById("creditoForm").addEventListener("submit", function(e){
-e.preventDefault();
-
-var nombre = document.getElementById("nombre").value;
-var telefono = document.getElementById("telefono").value;
-var monto = document.getElementById("monto").value;
-var tipo = document.getElementById("tipo").value;
-
-var mensaje = "Hola quiero información sobre un crédito.%0A%0A" +
-"Nombre: " + nombre + "%0A" +
-"Teléfono: " + telefono + "%0A" +
-"Monto deseado: " + monto + "%0A" +
-"Tipo de crédito: " + tipo;
-
-window.open("https://wa.me/573186972557?text=" + mensaje, "_blank");
-});
-
-/* Slider */
 let sliderIndex = 0;
 const slider = document.querySelector(".slides");
 const dots = document.querySelectorAll(".dot");
+const totalSlides = 2;
 
 function updateSlider(){
 slider.style.transform = "translateX(-" + (sliderIndex * 100) + "%)";
@@ -379,7 +349,7 @@ dots[sliderIndex].classList.add("active");
 }
 
 setInterval(()=>{
-sliderIndex = (sliderIndex + 1) % 2;
+sliderIndex = (sliderIndex + 1) % totalSlides;
 updateSlider();
 },5000);
 
@@ -389,7 +359,6 @@ sliderIndex = index;
 updateSlider();
 });
 });
-
 </script>
 
 </body>
