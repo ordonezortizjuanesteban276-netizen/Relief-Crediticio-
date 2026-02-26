@@ -186,13 +186,23 @@ font-size:28px;
 background:linear-gradient(90deg,#0f3d2e,#1b7a5a);
 color:white;
 padding:80px 10%;
-overflow:hidden;
 position:relative;
+overflow:hidden;
 }
 
 .slides{
 display:flex;
+width:200%;
 transition:transform 0.6s ease;
+}
+
+.slide{
+width:100%;
+flex-shrink:0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
 }
 
 .slide{
@@ -281,7 +291,7 @@ width:100%;
 class="btn" target="_blank">Pídelo ahora</a>
 </div>
 <div class="slide-img">
-<img src="pensionada.jpg" alt="Pensionada feliz">
+<img src="pensionada.png" alt="Pensionada feliz">
 </div>
 </div>
 
@@ -416,4 +426,5 @@ updateSlider();
 </script>
 </body>
 </html>
+
 
