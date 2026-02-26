@@ -48,7 +48,7 @@ font-weight:500;
 background:#0f3d2e;
 color:white !important;
 padding:12px 25px;
-border-radius:6px;
+border-radius:8px;
 text-decoration:none;
 font-weight:600;
 display:inline-block;
@@ -97,14 +97,14 @@ display:block;
 .slider{
 background:linear-gradient(90deg,#0f3d2e,#1b7a5a);
 color:white;
-padding:80px 10%;
 overflow:hidden;
+position:relative;
 }
 
 .slides{
 display:flex;
 width:200%;
-transition:transform 0.6s ease;
+transition:transform 0.7s ease;
 }
 
 .slide{
@@ -112,7 +112,9 @@ min-width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:50px;
+padding:80px 10%;
+height:500px;
+box-sizing:border-box;
 }
 
 .slide-text{
@@ -120,20 +122,34 @@ max-width:500px;
 }
 
 .slide h2{
-font-size:40px;
+font-size:42px;
 margin-bottom:20px;
 }
 
+.slide p{
+margin-bottom:25px;
+}
+
+.slide-img{
+flex:1;
+display:flex;
+justify-content:flex-end;
+}
+
 .slide-img img{
-width:450px;
-height:300px;
+width:100%;
+max-width:550px;
+height:380px;
 object-fit:cover;
 border-radius:20px;
 }
 
+/* DOTS */
 .slider-dots{
+position:absolute;
+bottom:20px;
+width:100%;
 text-align:center;
-margin-top:30px;
 }
 
 .dot{
@@ -242,7 +258,12 @@ padding:30px;
 @media(max-width:768px){
 .slide{
 flex-direction:column;
+height:auto;
 text-align:center;
+}
+.slide-img{
+justify-content:center;
+margin-top:30px;
 }
 .slide-img img{
 width:100%;
@@ -312,7 +333,7 @@ class="btn" target="_blank">Solicítalo hoy</a>
 </div>
 </section>
 
-<!-- HERO ORIGINAL -->
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h2>Soluciones de crédito diseñadas para ti</h2>
@@ -335,6 +356,26 @@ class="btn" target="_blank">Más información</a>
 </div>
 </section>
 
+<!-- FORMULARIO -->
+<section class="form-section">
+<h2>Solicita tu crédito ahora</h2>
+
+<form id="creditoForm">
+<input type="text" id="nombre" placeholder="Nombre completo" required>
+<input type="tel" id="telefono" placeholder="Teléfono" required>
+<input type="number" id="monto" placeholder="Monto deseado" required>
+
+<select id="tipo" required>
+<option value="">Tipo de crédito</option>
+<option>Pensionado</option>
+<option>Consumo</option>
+<option>Libre inversión</option>
+</select>
+
+<button type="submit">QUIERO MI CRÉDITO</button>
+</form>
+</section>
+
 <footer>
 © 2026 Relief Crediticio - Todos los derechos reservados.
 </footer>
@@ -352,6 +393,7 @@ dropdown.classList.remove("active");
 }
 });
 
+/* SLIDER */
 let sliderIndex = 0;
 const slider = document.querySelector(".slides");
 const dots = document.querySelectorAll(".dot");
@@ -373,6 +415,24 @@ dot.addEventListener("click",()=>{
 sliderIndex = index;
 updateSlider();
 });
+});
+
+/* FORMULARIO WHATSAPP */
+document.getElementById("creditoForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+var nombre = document.getElementById("nombre").value;
+var telefono = document.getElementById("telefono").value;
+var monto = document.getElementById("monto").value;
+var tipo = document.getElementById("tipo").value;
+
+var mensaje = "Hola quiero información sobre un crédito.%0A%0A" +
+"Nombre: " + nombre + "%0A" +
+"Teléfono: " + telefono + "%0A" +
+"Monto deseado: " + monto + "%0A" +
+"Tipo de crédito: " + tipo;
+
+window.open("https://wa.me/573186972557?text=" + mensaje, "_blank");
 });
 </script>
 
