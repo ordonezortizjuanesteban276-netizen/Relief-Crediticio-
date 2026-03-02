@@ -359,26 +359,6 @@ flex-direction:column;
 <input type="text" name="tipo_credito" placeholder="Escribe el tipo de crédito" required>
 <button type="submit">QUIERO MI CRÉDITO</button>
 </form>
-<script>
-document.getElementById("miFormulario").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    let nombre = document.getElementById("nombre").value;
-    let tipo = document.getElementById("tipo_credito").value;
-    let monto = document.getElementById("monto").value;
-
-    let mensaje = `Hola, quiero solicitar un crédito.
-Nombre: ${nombre}
-Tipo de crédito: ${tipo}
-Monto: ${monto}`;
-
-    let numero = "573001234567"; // <-- CAMBIA POR TU NUMERO
-
-    let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
-
-    window.open(url, "_blank");
-});
-</script>
 </div>
 </section>
 
