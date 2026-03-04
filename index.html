@@ -149,8 +149,7 @@ cursor:pointer;
 
 /* SOLUCIONES */
 .soluciones{
-background:#111;
-color:white;
+background:#f3f6f9;
 padding:80px 10%;
 text-align:center;
 }
@@ -158,24 +157,38 @@ text-align:center;
 .soluciones h2{
 font-size:40px;
 margin-bottom:60px;
+color:#0f3d2e;
 }
 
 .sol-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
 }
 
 .sol-item{
-background:#1c1c1c;
-padding:30px;
-border-radius:15px;
+flex:1;
+padding:20px;
+min-width:200px;
 }
 
 .sol-item h4{
 margin-top:15px;
+color:#0f3d2e;
+font-weight:600;
 }
 
+.icon{
+font-size:45px;
+color:#1b7a5a;
+}
+
+.divider{
+width:1px;
+height:80px;
+background:#dcdcdc;
+}
 /* FORMULARIO JUNTO A IMAGEN */
 .pension-form{
 padding:80px 10%;
@@ -324,26 +337,33 @@ flex-direction:column;
 <!-- SOLUCIONES -->
 <section class="soluciones">
 <h2>Soluciones financieras</h2>
+
 <div class="sol-grid">
 
 <div class="sol-item">
-<h4>Libranza ágil</h4>
-<p>Procesos rápidos y seguros.</p>
+<div class="icon">💰</div>
+<h4>Libranza ágil para pensionados</h4>
 </div>
 
-<div class="sol-item">
-<h4>Atención personalizada</h4>
-<p>Acompañamiento en todo momento.</p>
-</div>
+<div class="divider"></div>
 
 <div class="sol-item">
-<h4>Cobertura nacional</h4>
-<p>Presencia en múltiples municipios.</p>
+<div class="icon">📈</div>
+<h4>CDT con tasas competitivas</h4>
 </div>
 
+<div class="divider"></div>
+
 <div class="sol-item">
-<h4>Inclusión financiera</h4>
-<p>Opciones para reportados o no.</p>
+<div class="icon">👥</div>
+<h4>Nuestros asesores llegan a más de 900 municipios</h4>
+</div>
+
+<div class="divider"></div>
+
+<div class="sol-item">
+<div class="icon">🤝</div>
+<h4>Comprometidos con la inclusión financiera</h4>
 </div>
 
 </div>
@@ -430,5 +450,6 @@ window.open("https://wa.me/573186972557?text=" + mensaje, "_blank");
 
 </body>
 </html>
+
 
 
