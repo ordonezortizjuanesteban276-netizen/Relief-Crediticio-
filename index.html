@@ -153,7 +153,78 @@ background:#f3f6f9;
 padding:80px 10%;
 text-align:center;
 }
+.info-destacada{
+background:#e9f0f6;
+padding:90px 10%;
+}
 
+.info-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.info-text{
+flex:1;
+max-width:600px;
+}
+
+.info-text h2{
+font-size:40px;
+color:#0f3d2e;
+margin-bottom:10px;
+}
+
+.info-text .sub{
+color:#1b7a5a;
+margin-bottom:40px;
+font-weight:500;
+}
+
+.info-item{
+display:flex;
+gap:20px;
+margin-bottom:30px;
+}
+
+.info-icon{
+background:#1b7a5a;
+color:white;
+font-size:24px;
+padding:18px;
+border-radius:12px;
+height:fit-content;
+}
+
+.info-item h4{
+margin:0 0 8px 0;
+color:#0f3d2e;
+}
+
+.info-item p{
+margin:0;
+color:#333;
+}
+
+.info-img img{
+width:100%;
+max-width:450px;
+border-radius:20px;
+}
+
+@media(max-width:768px){
+.info-container{
+flex-direction:column;
+text-align:center;
+}
+
+.info-item{
+flex-direction:column;
+align-items:center;
+}
+}
 .soluciones h2{
 font-size:40px;
 margin-bottom:60px;
@@ -368,6 +439,37 @@ flex-direction:column;
 
 </div>
 </section>
+<section class="info-destacada">
+<div class="info-container">
+
+<div class="info-text">
+<h2>Agilidad con tranquilidad</h2>
+<p class="sub">Agilidad cuando la necesitas, claridad siempre.</p>
+
+<div class="info-item">
+<div class="info-icon">📄</div>
+<div>
+<h4>Agilidad cuando la necesitas, claridad siempre</h4>
+<p>En menos de una hora puedes tener una respuesta inicial, siempre acompañada de una explicación clara y sin presión para decidir.</p>
+</div>
+</div>
+
+<div class="info-item">
+<div class="info-icon">👩‍💼</div>
+<div>
+<h4>Más de 10 años acompañando decisiones financieras reales</h4>
+<p>Hemos originado créditos por miles de millones, acompañando a pensionados, docentes y trabajadores con un modelo responsable y sostenible.</p>
+</div>
+</div>
+
+</div>
+
+<div class="info-img">
+<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+</div>
+
+</div>
+</section>
 <section class="pension-form">
 <div class="pension-flex">
 <img src="pensionada.png">
@@ -450,6 +552,7 @@ window.open("https://wa.me/573186972557?text=" + mensaje, "_blank");
 
 </body>
 </html>
+
 
 
 
