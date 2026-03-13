@@ -598,14 +598,14 @@ Te ayudamos a elegir la opción que mejor se adapte a tu capacidad de pago y obj
 <img src="pensionada.png">
 
 <form id="creditoForm">
+
 <input type="text" id="nombre" placeholder="Nombre completo" required>
 
 <input type="tel" id="telefono" placeholder="Teléfono" required>
 
-<input type="text" id="edad" placeholder="Edad" required>
+<input type="number" id="edad" placeholder="Edad" required>
 
-
-<input type="text" id="monto" placeholder="Monto deseado" required>
+<input type="number" id="monto" placeholder="Monto deseado" required>
 
 <input type="text" id="tipo" placeholder="Tipo de crédito" required>
 
@@ -614,11 +614,12 @@ Te ayudamos a elegir la opción que mejor se adapte a tu capacidad de pago y obj
 <option>Empleado</option>
 <option>Independiente</option>
 <option>Pensionado</option>
-</select>  
+</select>
 
-<!-- 🔥 ÚNICO CAMBIO -->
 <button type="submit">QUIERO MI CRÉDITO</button>
-</form>
+
+</form>  
+
 </div>
 </section>
 
@@ -668,23 +669,30 @@ updateSlider();
 },5000);
 
 /* FORM WHATSAPP */
+/* FORM WHATSAPP */
 document.getElementById("creditoForm").addEventListener("submit", function(e){
+
 e.preventDefault();
-var telefono = document.getElementById("Nombre").value;
-var edad = document.getElementById("telefono").value;
-var monto = document.getElementById("edad").value;
+
+var nombre = document.getElementById("nombre").value;
+var telefono = document.getElementById("telefono").value;
+var edad = document.getElementById("edad").value;
+var monto = document.getElementById("monto").value;
 var tipo = document.getElementById("tipo").value;
 var persona = document.getElementById("persona").value;
 
-var mensaje = `Hola quiero información sobre un crédito.%0A%0A
-Nombre: ${nombre}%0A
-Teléfono: ${telefono}%0A
-Edad: ${edad}%0A
-Monto deseado: ${monto}%0A
-Tipo de credito: ${tipo}%0A
-Tipo de persona: ${persona}`;
+var mensaje = "Hola, quiero información sobre un crédito.%0A%0A" +
+"Nombre: " + nombre + "%0A" +
+"Teléfono: " + telefono + "%0A" +
+"Edad: " + edad + "%0A" +
+"Monto deseado: " + monto + "%0A" +
+"Tipo de crédito: " + tipo + "%0A" +
+"Tipo de persona: " + persona;
 
-window.open("https://wa.me/573186972557?text=" + mensaje, "_blank");
+var url = "https://wa.me/573186972557?text=" + mensaje;
+
+window.open(url, "_blank");
+
 });
 </script>
 <footer class="footer">
@@ -726,6 +734,7 @@ window.open("https://wa.me/573186972557?text=" + mensaje, "_blank");
   
 </body>
 </html>
+
 
 
 
