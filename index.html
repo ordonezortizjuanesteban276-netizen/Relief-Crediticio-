@@ -293,16 +293,13 @@ color:#0f3d2e;
 }
 
 .sol-grid{
-display:flex;
+display:grid;
+grid-template-columns:repeat(4,1fr);
 align-items:center;
-justify-content:space-between;
-flex-wrap:wrap;
+gap:40px;
 }
 
 .sol-item{
-flex:1;
-padding:20px;
-min-width:200px;
 text-align:center;
 display:flex;
 flex-direction:column;
@@ -528,8 +525,10 @@ flex-direction:column;
 <div class="divider"></div>
 
 <div class="icon">
-<svg viewBox="0 0 24 24" fill="#0f3d2e">
-<path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2a8 8 0 017.75 6h-3.09a13.2 13.2 0 00-1.38-4.32A7.96 7.96 0 0112 4zM8.72 5.68A13.2 13.2 0 007.34 10H4.25a8 8 0 014.47-4.32zM4 12h3.06c.09 1.55.47 3.02 1.11 4.32A8 8 0 014 12zm5.34 0h5.32c-.11 1.43-.44 2.77-.94 3.96-.5-1.19-.83-2.53-.94-3.96zm2.66 8a8 8 0 01-3.28-.68c.55-.93.98-2.02 1.24-3.22h4.08c.26 1.2.69 2.29 1.24 3.22A8 8 0 0112 20zm2.94-3.68c.64-1.3 1.02-2.77 1.11-4.32H20a8 8 0 01-5.06 4.32z"/>
+<svg viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10" fill="none" stroke="#0f3d2e" stroke-width="2"/>
+<path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" 
+stroke="#0f3d2e" stroke-width="2" fill="none"/>
 </svg>
 </div>
 <h4>Nuestros asesores llegan a más de 900 municipios</h4>
@@ -707,6 +706,7 @@ window.open("https://wa.me/573186972557?text=" + mensaje, "_blank");
   
 </body>
 </html>
+
 
 
 
