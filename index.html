@@ -14,13 +14,14 @@
 body{
 margin:0;
 font-family:'Poppins', sans-serif;
-background:#f5f7fa;
+background:white;
+overflow-x:hidden;
 }
 
 /* HEADER */
 header{
 background:white;
-padding:20px 10%;
+padding:20px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -97,6 +98,7 @@ background:linear-gradient(90deg,#0f3d2e,#1b7a5a);
 color:white;
 overflow:hidden;
 position:relative;
+min-height:500px;
 }
 
 .slides{
@@ -109,8 +111,9 @@ flex:0 0 100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:80px 10%;
-height:500px;
+padding:80px 5%;
+height:auto;
+min-height:500px;
 box-sizing:border-box;
 }
 
@@ -154,13 +157,16 @@ cursor:pointer;
 
 /* SOLUCIONES */
 .soluciones{
-background:#f3f6f9;
-padding:80px 10%;
+background:white;
+padding:100px 5%;
 text-align:center;
+width:100%;
 }
+  
 .info-destacada{
-background:#e9f0f6;
-padding:90px 10%;
+background:#f5f7fa;
+padding:120px 5%;
+width:100%;
 }
 
 .footer{
@@ -276,8 +282,9 @@ color:#333;
 
 .info-img img{
 width:100%;
-max-width:450px;
-border-radius:20px;
+max-width:550px;
+border-radius:25px;
+object-fit:cover;
 }
 
 @media(max-width:768px){
