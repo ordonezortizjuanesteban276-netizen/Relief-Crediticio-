@@ -300,8 +300,37 @@ color:#0f3d2e;
 .sol-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-align-items:center;
+align-items:start;
 gap:40px;
+}
+
+/* TABLET */
+@media(max-width:900px){
+.sol-grid{
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+}
+
+/* CELULAR */
+@media(max-width:600px){
+.sol-grid{
+grid-template-columns:1fr;
+gap:35px;
+}
+
+.divider{
+display:none;
+}
+
+.sol-item{
+padding:10px;
+}
+
+.sol-item h4{
+font-size:18px;
+line-height:1.4;
+}
 }
 
 .sol-item{
