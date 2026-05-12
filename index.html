@@ -304,19 +304,11 @@ align-items:start;
 gap:40px;
 }
 
-/* TABLET */
-@media(max-width:900px){
+@media(max-width:768px){
+
 .sol-grid{
 grid-template-columns:repeat(2,1fr);
-gap:30px;
-}
-}
-
-/* CELULAR */
-@media(max-width:600px){
-.sol-grid{
-grid-template-columns:1fr;
-gap:35px;
+gap:25px;
 }
 
 .divider{
@@ -324,13 +316,20 @@ display:none;
 }
 
 .sol-item{
+min-width:auto;
 padding:10px;
 }
 
 .sol-item h4{
-font-size:18px;
+font-size:14px;
 line-height:1.4;
 }
+
+.icon svg{
+width:38px;
+height:38px;
+}
+
 }
 
 .sol-item{
@@ -544,10 +543,49 @@ flex-direction:column;
 <div class="sol-grid">
 
 <div class="sol-item">
-<div class="icon"><svg viewBox="0 0 24 24" fill="#0f3d2e">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="#0f3d2e">
 <path d="M12 12c2.7 0 5-2.3 5-5S14.7 2 12 2 7 4.3 7 7s2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
-</svg></div>
+</svg>
+</div>
 <h4>Libranza ágil para pensionados</h4>
+</div>
+
+<div class="divider"></div>
+
+<div class="sol-item">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="#0f3d2e">
+<path d="M3 3v18h18v-2H5V3H3zm6 12l3-3 2 2 4-5 2 2v6H9z"/>
+</svg>
+</div>
+<h4>CDT con tasas competitivas</h4>
+</div>
+
+<div class="divider"></div>
+
+<div class="sol-item">
+<div class="icon">
+<svg viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10" fill="none" stroke="#0f3d2e" stroke-width="2"/>
+<path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"
+stroke="#0f3d2e" stroke-width="2" fill="none"/>
+</svg>
+</div>
+<h4>Nuestros asesores llegan a más de 900 municipios</h4>
+</div>
+
+<div class="divider"></div>
+
+<div class="sol-item">
+<div class="icon">
+<svg viewBox="0 0 24 24" fill="#0f3d2e">
+<path d="M16 11c1.66 0 3-1.34 3-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.96 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/>
+</svg>
+</div>
+<h4>Comprometidos con la inclusión financiera</h4>
+</div>
+
 </div>
 
 
