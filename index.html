@@ -14,14 +14,13 @@
 body{
 margin:0;
 font-family:'Poppins', sans-serif;
-background:white;
-overflow-x:hidden;
+background:#f5f7fa;
 }
 
 /* HEADER */
 header{
 background:white;
-padding:20px 5%;
+padding:20px 10%;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -98,7 +97,6 @@ background:linear-gradient(90deg,#0f3d2e,#1b7a5a);
 color:white;
 overflow:hidden;
 position:relative;
-min-height:500px;
 }
 
 .slides{
@@ -107,8 +105,13 @@ transition:transform 0.7s ease;
 }
 
 .slide{
+flex:0 0 100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
 padding:80px 10%;
 height:500px;
+box-sizing:border-box;
 }
 
 .slide-text{max-width:500px;}
@@ -155,7 +158,6 @@ background:#f3f6f9;
 padding:80px 10%;
 text-align:center;
 }
-  
 .info-destacada{
 background:#e9f0f6;
 padding:90px 10%;
@@ -211,56 +213,6 @@ padding-top:20px;
 text-align:center;
 font-size:13px;
 opacity:0.8;
-}
-
-
-/* FORMULARIO JUNTO A IMAGEN */
-.pension-form{
-padding:80px 10%;
-}
-
-.pension-flex{
-display:flex;
-align-items:center;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.pension-flex img{
-width:100%;
-max-width:450px;
-border-radius:15px;
-}
-
-form{
-flex:1;
-display:flex;
-flex-direction:column;
-max-width:500px;
-}
-
-form input, form select{
-padding:14px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:8px;
-}
-
-form button{
-padding:15px;
-background:#f4b400;
-border:none;
-font-weight:600;
-border-radius:8px;
-cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-background:#09271d;
-color:white;
-text-align:center;
-padding:30px;
 }
 
 @media(max-width:768px){
@@ -324,9 +276,8 @@ color:#333;
 
 .info-img img{
 width:100%;
-max-width:550px;
-border-radius:25px;
-object-fit:cover;
+max-width:450px;
+border-radius:20px;
 }
 
 @media(max-width:768px){
@@ -349,24 +300,23 @@ color:#0f3d2e;
 .sol-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-align-items:center;
-justify-items:center;
-gap:30px;
-max-width:1000px;
-margin:0 auto;
+align-items:start;
+gap:40px;
 }
 
-@media(max-width:768px){
-
-.soluciones{
-padding:60px 5%;
-}
-
+/* TABLET */
+@media(max-width:900px){
 .sol-grid{
 grid-template-columns:repeat(2,1fr);
-gap:25px;
-justify-items:center;
-align-items:start;
+gap:30px;
+}
+}
+
+/* CELULAR */
+@media(max-width:600px){
+.sol-grid{
+grid-template-columns:1fr;
+gap:35px;
 }
 
 .divider{
@@ -374,24 +324,13 @@ display:none;
 }
 
 .sol-item{
-min-width:auto;
 padding:10px;
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
 }
 
 .sol-item h4{
-font-size:14px;
+font-size:18px;
 line-height:1.4;
 }
-
-.icon svg{
-width:38px;
-height:38px;
-}
-
 }
 
 .sol-item{
@@ -452,8 +391,74 @@ color:#1b7a5a;
 width:1px;
 height:80px;
 background:#dcdcdc;
-}  
-  
+}
+/* FORMULARIO JUNTO A IMAGEN */
+.pension-form{
+padding:80px 10%;
+}
+
+.pension-flex{
+display:flex;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.pension-flex img{
+width:100%;
+max-width:450px;
+border-radius:15px;
+}
+
+form{
+flex:1;
+display:flex;
+flex-direction:column;
+max-width:500px;
+}
+
+form input, form select{
+padding:14px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+form button{
+padding:15px;
+background:#f4b400;
+border:none;
+font-weight:600;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:#09271d;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+@media(max-width:768px){
+.slide{
+flex-direction:column;
+height:auto;
+text-align:center;
+}
+.slide-img{
+justify-content:center;
+margin-top:30px;
+}
+.slide-img img{
+width:100%;
+height:auto;
+}
+.pension-flex{
+flex-direction:column;
+}
+}
 </style>
 </head>
 
@@ -539,52 +544,39 @@ background:#dcdcdc;
 <div class="sol-grid">
 
 <div class="sol-item">
-<div class="icon">
-<svg viewBox="0 0 24 24" fill="#0f3d2e">
+<div class="icon"><svg viewBox="0 0 24 24" fill="#0f3d2e">
 <path d="M12 12c2.7 0 5-2.3 5-5S14.7 2 12 2 7 4.3 7 7s2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
-</svg>
-</div>
+</svg></div>
 <h4>Libranza ágil para pensionados</h4>
 </div>
 
-<div class="divider"></div>
 
 <div class="sol-item">
-<div class="icon">
-<svg viewBox="0 0 24 24" fill="#0f3d2e">
+<div class="icon"><svg viewBox="0 0 24 24" fill="#0f3d2e">
 <path d="M3 3v18h18v-2H5V3H3zm6 12l3-3 2 2 4-5 2 2v6H9z"/>
-</svg>
-</div>
+</svg></div>
 <h4>CDT con tasas competitivas</h4>
 </div>
 
-<div class="divider"></div>
 
 <div class="sol-item">
 <div class="icon">
 <svg viewBox="0 0 24 24">
 <circle cx="12" cy="12" r="10" fill="none" stroke="#0f3d2e" stroke-width="2"/>
-<path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"
+<path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" 
 stroke="#0f3d2e" stroke-width="2" fill="none"/>
 </svg>
 </div>
 <h4>Nuestros asesores llegan a más de 900 municipios</h4>
 </div>
 
-<div class="divider"></div>
 
 <div class="sol-item">
-<div class="icon">
-<svg viewBox="0 0 24 24" fill="#0f3d2e">
+<div class="icon"><svg viewBox="0 0 24 24" fill="#0f3d2e">
 <path d="M16 11c1.66 0 3-1.34 3-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.96 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/>
-</svg>
-</div>
+</svg></div>
 <h4>Comprometidos con la inclusión financiera</h4>
 </div>
-
-</div>
-
-
 
 </div>
 </section>
@@ -774,7 +766,6 @@ window.open(url, "_blank");
   
 </body>
 </html>
-
 
 
 
