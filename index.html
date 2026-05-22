@@ -14,14 +14,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* --- ESTILOS GENERALES (SIN CAMBIOS) --- */
+/* --- ESTILOS GENERALES --- */
 body{
 margin:0;
 font-family:'Poppins', sans-serif;
 background:#f5f7fa;
 }
 
-/* --- HEADER (IGUAL PARA PC) --- */
+/* --- HEADER --- */
 header{
 background:white;
 padding:20px 10%;
@@ -52,7 +52,7 @@ color:#0f3d2e;
 font-weight:500;
 }
 
-/* --- BOTONES (IGUAL) --- */
+/* --- BOTONES --- */
 .btn{
 background:#0f3d2e;
 color:white !important;
@@ -69,33 +69,109 @@ transition:0.3s;
 background:#145c45;
 }
 
-/* --- DROPDOWN (IGUAL) --- */
-.dropdown{position:relative;}
-
-.dropdown-content{
-display:none;
-position:absolute;
-top:110%;
-left:0;
-background:white;
-min-width:220px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-overflow:hidden;
+/* --- NUEVO FORMULARIO FLOTANTE CONTACTO --- */
+.dropdown {
+  position: relative;
 }
 
-.dropdown-content a,
-.dropdown-content span{
-display:block;
-padding:12px;
-color:#0f3d2e;
-text-decoration:none;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: white;
+  width: 380px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  padding: 25px;
+  box-sizing: border-box;
+  color: #333;
 }
 
-.dropdown-content a:hover{background:#f4f4f4;}
-.dropdown.active .dropdown-content{display:block;}
+.dropdown-content h3 {
+  margin: 0 0 5px 0;
+  color: #0f3d2e;
+  font-size: 20px;
+  font-weight: 700;
+}
 
-/* --- SLIDER (ESTRUCTURA DE PC MANTENIDA) --- */
+.dropdown-content p {
+  margin: 0 0 20px 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.situacion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.situacion-btn {
+  background: white;
+  border: 1.5px solid #0f3d2e;
+  color: #0f3d2e;
+  padding: 8px;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.situacion-btn.full-width {
+  grid-column: span 2;
+}
+
+.situacion-btn:hover, .situacion-btn.active {
+  background: #0f3d2e;
+  color: white;
+}
+
+.contact-row {
+  display: flex;
+  gap: 10px;
+}
+
+.dropdown-content input, 
+.dropdown-content select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+.dropdown-content button.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  background: #f4b400;
+  color: #0f3d2e;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown-content button.btn-enviar:hover {
+  background: #e0a500;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* --- SLIDER --- */
 .slider{
 background:linear-gradient(90deg,#0f3d2e,#1b7a5a);
 color:white;
@@ -156,7 +232,7 @@ cursor:pointer;
 
 .dot.active{background:white;}
 
-/* --- SOLUCIONES (IGUAL PC) --- */
+/* --- SOLUCIONES --- */
 .soluciones{
 background:#f3f6f9;
 padding:80px 10%;
@@ -207,10 +283,10 @@ height:50px;
 }
 
 .divider{
-display:none; /* Ocultamos el divider original, ya no es necesario */
+display:none;
 }
 
-/* --- INFO DESTACADA (IGUAL PC) --- */
+/* --- INFO DESTACADA --- */
 .info-destacada{
 background:#e9f0f6;
 padding:90px 10%;
@@ -271,7 +347,7 @@ max-width:450px;
 border-radius:20px;
 }
 
-/* --- FORMULARIO (IGUAL PC) --- */
+/* --- FORMULARIO INFERIOR --- */
 .pension-form{
 padding:80px 10%;
 }
@@ -312,7 +388,7 @@ border-radius:8px;
 cursor:pointer;
 }
 
-/* --- FOOTER (IGUAL PC) --- */
+/* --- FOOTER --- */
 .footer{
 background:#0f3d2e;
 color:white;
@@ -365,9 +441,8 @@ font-size:13px;
 opacity:0.8;
 }
 
-/* --- REGLAS EXCLUSIVAS PARA MÓVILES (REEMPLAZANDO LA ANTERIOR MEDIA QUERY) --- */
+/* --- REGLAS EXCLUSIVAS PARA MÓVILES --- */
 @media(max-width:768px){
-  /* Header y Nav en columna */
   header {
     flex-direction: column;
     padding: 15px 5%;
@@ -389,8 +464,17 @@ opacity:0.8;
     width: 100%;
     box-sizing: border-box;
   }
+  
+  /* Ajuste de formulario flotante en celular */
+  .dropdown-content {
+    position: fixed;
+    top: 100px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    z-index: 2000;
+  }
 
-  /* Slider en columna */
   .slide {
     flex-direction: column;
     height: auto;
@@ -417,8 +501,6 @@ opacity:0.8;
     height: auto;
     max-width: 100%;
   }
-
-  /* Soluciones en columna */
   .soluciones {
     padding: 40px 5%;
   }
@@ -437,11 +519,6 @@ opacity:0.8;
   .sol-item h4 {
     font-size: 16px;
   }
-  .divider {
-    display: none;
-  }
-
-  /* Info destacada en columna */
   .info-destacada {
     padding: 40px 5%;
   }
@@ -465,8 +542,6 @@ opacity:0.8;
   .info-img img {
     max-width: 100%;
   }
-
-  /* Formulario en columna */
   .pension-form {
     padding: 40px 5%;
   }
@@ -481,8 +556,6 @@ opacity:0.8;
     width: 100%;
     max-width: 100%;
   }
-
-  /* Footer en columna */
   .footer {
     padding: 40px 5%;
   }
@@ -498,7 +571,7 @@ opacity:0.8;
   }
 }
 
-/* TABLET MANTENIDO PARA REPETIR 2 COLUMNAS */
+/* TABLET */
 @media(max-width:900px){
 .sol-grid{
 grid-template-columns:repeat(2,1fr);
@@ -518,9 +591,37 @@ gap:30px;
 <div class="dropdown" id="contactDropdown">
 <a href="#" class="btn" onclick="toggleDropdown(event)">Contáctanos ▾</a>
 <div class="dropdown-content">
-<a href="https://wa.me/573175012956" target="_blank">📱 WhatsApp</a>
-<a href="tel:+576023125831">☎ Teléfono fijo</a>
-<span>📧 reliefcrediticio@gmail.com</span>
+  <h3>Quiero que me contacten</h3>
+  <p>Usaremos los datos para comunicarnos contigo y asesorarte en tu crédito.</p>
+  
+  <form id="contactoRapidoForm">
+    <label style="font-size:12px; font-weight:700; color:#0f3d2e; display:block; margin-bottom:8px;">¿Cuál es tu situación laboral actual? *</label>
+    <div class="situacion-grid">
+      <div class="situacion-btn" onclick="seleccionarSituacion(this, 'Pensionado')">Pensionado</div>
+      <div class="situacion-btn" onclick="seleccionarSituacion(this, 'Sector Educación')">Sector Educación</div>
+      <div class="situacion-btn full-width" onclick="seleccionarSituacion(this, 'Empleado/Independiente')">Empleado / Independiente</div>
+    </div>
+    
+    <input type="hidden" id="contactSituacion" value="" required>
+
+    <div class="contact-row">
+      <select id="contactConvenio" required>
+        <option value="">Tipo de convenio *</option>
+        <option value="Libranza">Libranza</option>
+        <option value="Consumo">Consumo</option>
+      </select>
+      <input type="number" id="contactDocumento" placeholder="Número documento *" required>
+    </div>
+
+    <input type="text" id="contactNombre" placeholder="Nombre completo *" required>
+
+    <div class="contact-row">
+      <input type="email" id="contactCorreo" placeholder="Correo electrónico *" required>
+      <input type="tel" id="contactCelular" placeholder="Celular *" required>
+    </div>
+
+    <button type="submit" class="btn-enviar">SOLICITAR CONTACTO</button>
+  </form>
 </div>
 </div>
 </nav>
@@ -528,7 +629,6 @@ gap:30px;
 
 <section class="slider">
 <div class="slides">
-
 <div class="slide">
 <div class="slide-text">
 <h2>Créditos para reportados</h2>
@@ -538,7 +638,6 @@ gap:30px;
 <img src="PrestamosSinBuroViaNomina-768x421.png">
 </div>
 </div>
-
 <div class="slide">
 <div class="slide-text">
 <h2>Opciones de financioamiento para colaboradores</h2>
@@ -548,7 +647,6 @@ gap:30px;
 <img src="amigos.png">
 </div>
 </div>
-
 <div class="slide">
 <div class="slide-text">
 <h2>Créditos para pensionados</h2>
@@ -558,7 +656,6 @@ gap:30px;
 <img src="vieja.png">
 </div>
 </div>
-
 <div class="slide">
 <div class="slide-text">
 <h2>Créditos para docentes</h2>
@@ -568,7 +665,6 @@ gap:30px;
 <img src="Gemini_Generated_Image_e8eside8eside8es.png">
 </div>
 </div>
-
 <div class="slide">
 <div class="slide-text">
 <h2>Créditos para militares</h2>
@@ -578,75 +674,64 @@ gap:30px;
 <img src="militar.png">
 </div>
 </div>
-
 </div>
 <div class="slider-dots"></div>
 </section>
+
 <section class="soluciones">
 <h2>Soluciones financieras</h2>
-
 <div class="sol-grid">
-
 <div class="sol-item">
 <div class="icon"><svg viewBox="0 0 24 24" fill="#0f3d2e">
 <path d="M12 12c2.7 0 5-2.3 5-5S14.7 2 12 2 7 4.3 7 7s2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
 </svg></div>
 <h4>Libranza ágil para pensionados</h4>
 </div>
-
 <div class="sol-item">
 <div class="icon"><svg viewBox="0 0 24 24" fill="#0f3d2e">
 <path d="M3 3v18h18v-2H5V3H3zm6 12l3-3 2 2 4-5 2 2v6H9z"/>
 </svg></div>
 <h4>CDT con tasas competitivas</h4>
 </div>
-
 <div class="sol-item">
 <div class="icon">
 <svg viewBox="0 0 24 24">
 <circle cx="12" cy="12" r="10" fill="none" stroke="#0f3d2e" stroke-width="2"/>
-<path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" 
-stroke="#0f3d2e" stroke-width="2" fill="none"/>
+<path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" stroke="#0f3d2e" stroke-width="2" fill="none"/>
 </svg>
 </div>
 <h4>Nuestros asesores llegan a más de 900 municipios</h4>
 </div>
-
 <div class="sol-item">
 <div class="icon"><svg viewBox="0 0 24 24" fill="#0f3d2e">
 <path d="M16 11c1.66 0 3-1.34 3-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.96 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/>
 </svg></div>
 <h4>Comprometidos con la inclusión financiera</h4>
 </div>
-
 </div>
 </section>
+
 <section class="info-destacada">
 <div class="info-container">
-
 <div class="info-text">
 <h2>Agilidad con tranquilidad</h2>
-
 <div class="info-item">
 <div class="info-icon">
 <svg viewBox="0 0 24 24">
 <path d="M10 4H14V6H19C20.1 6 21 6.9 21 8V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V8C3 6.9 3.9 6 5 6H10V4Z"/>
 </svg>
 </div>
-
 <div>
 <h4>Conoce Más de Nuestro Portafolio</h4>
 <p>En Relief Crediticio trabajamos para brindarte soluciones financieras responsables, transparentes y adaptadas a tu realidad económica.</p>
 </div>
 </div>
-
 <div class="info-item">
 <div class="info-icon">
 <svg viewBox="0 0 24 24">
 <path d="M21 7H3C1.9 7 1 7.9 1 9V17C1 18.1 1.9 19 3 19H21C22.1 19 23 18.1 23 17V9C23 7.9 22.1 7 21 7ZM21 17H3V12H21V17ZM21 10H3V9H21V10Z"/>
 </svg>
 </div>
-
 <div>
 <h4>Créditos y Soluciones Financieras</h4>
 <p>
@@ -657,76 +742,58 @@ Te ayudamos a elegir la opción que mejor se adapte a tu capacidad de pago y obj
 </p>
 </div>
 </div>
-
 </div>
-
 <div class="info-img">
 <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
 </div>
-
 </div>
 </section>
+
 <section class="pension-form">
 <div class="pension-flex">
 <img src="pensionada.png">
-
 <form id="creditoForm">
-
 <input type="text" id="nombre" placeholder="Nombre completo" required>
-
 <input type="tel" id="telefono" placeholder="Teléfono" required>
-
 <input type="number" id="edad" placeholder="Edad" required>
-
 <input type="number" id="monto" placeholder="Monto deseado" required>
-
 <input type="text" id="tipo" placeholder="Tipo de crédito" required>
-
 <select id="solicitud" required>
 <option value="">Tipo de solicitud</option>
 <option>Empleado</option>
 <option>Independiente</option>
 <option>Pensionado</option>
 </select>
-
 <button type="submit">QUIERO MI CRÉDITO</button>
-
 </form>  
-
 </div>
 </section>
 
 <footer class="footer">
 <div class="footer-container">
-
 <div class="footer-col logo-col">
 <h2>Relief Crediticio</h2>
 <p>CRÉDITO CON CONFIANZA, ASESORÍA CON PROPÓSITO</p>
 </div>
-
 <div class="footer-col">
 <h3>Dirección</h3>
 <p>Cali/Colombia</p>
 <p>Carrera 4# 10-44</p>
 <p>Ed. Plaza Caicedo, Of. 613</p>
 </div>
-
 <div class="footer-col">
 <h3>Contacto</h3>
 <p>3175012956</p>
 <p>+57 6023125831</p>  
 <p>reliefcrediticio@gmail.com</p>
 </div>
-
 <div class="footer-col">
 <h3>Legal</h3>
 <p>Política de protección de datos</p>
 <p>Términos y condiciones</p>
 <p>Vigilados por la superintendencia de sociedades</p>
 </div>
-
 </div>
-
 <div class="footer-bottom">
 <p>Relief Crediticio © 2026. Todos los derechos reservados.</p>
 <p>Comprometidos con la transparencia financiera.</p>
@@ -734,6 +801,7 @@ Te ayudamos a elegir la opción que mejor se adapte a tu capacidad de pago y obj
 </footer>
 
 <script>
+/* Lógica de los menús desplegables */
 function toggleDropdown(event){
 event.preventDefault();
 document.getElementById("contactDropdown").classList.toggle("active");
@@ -744,6 +812,41 @@ var dropdown = document.getElementById("contactDropdown");
 if(!dropdown.contains(e.target)){
 dropdown.classList.remove("active");
 }
+});
+
+/* Lógica selección situación laboral */
+function seleccionarSituacion(elemento, valor) {
+  document.querySelectorAll('.situacion-btn').forEach(btn => btn.classList.remove('active'));
+  elemento.classList.add('active');
+  document.getElementById('contactSituacion').value = valor;
+}
+
+/* Envío formulario de contacto rápido (HEADER) */
+document.getElementById("contactoRapidoForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  var situacion = document.getElementById("contactSituacion").value;
+  var convenio = document.getElementById("contactConvenio").value;
+  var documento = document.getElementById("contactDocumento").value;
+  var nombre = document.getElementById("contactNombre").value;
+  var correo = document.getElementById("contactCorreo").value;
+  var celular = document.getElementById("contactCelular").value;
+
+  if(!situacion){
+    alert("Por favor, selecciona tu situación laboral actual.");
+    return;
+  }
+
+  var mensaje = "Hola, solicito contacto desde el formulario rápido.%0A%0A" +
+    "Situación laboral: " + situacion + "%0A" +
+    "Tipo de convenio: " + convenio + "%0A" +
+    "Documento: " + documento + "%0A" +
+    "Nombre completo: " + nombre + "%0A" +
+    "Correo: " + correo + "%0A" +
+    "Celular: " + celular;
+
+  var url = "https://wa.me/573175012956?text=" + mensaje;
+  window.open(url, "_blank");
 });
 
 /* SLIDER DINÁMICO */
@@ -774,9 +877,8 @@ sliderIndex=(sliderIndex+1)%slides.length;
 updateSlider();
 },5000);
 
-/* FORM WHATSAPP */
+/* Envío formulario inferior (PENSIONADA) */
 document.getElementById("creditoForm").addEventListener("submit", function(e){
-
 e.preventDefault();
 
 var nombre = document.getElementById("nombre").value;
@@ -795,9 +897,7 @@ var mensaje = "Hola, quiero información sobre un crédito.%0A%0A" +
 "Tipo de solicitud: " + solicitud;
 
 var url = "https://wa.me/573175012956?text=" + mensaje;
-
 window.open(url, "_blank");
-
 });
 </script>
 </body>
