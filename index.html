@@ -284,7 +284,7 @@ transition: 0.3s;
 
 .dot.active{background:white; width: 24px; border-radius: 10px;}
 
-/* --- SOLUCIONES (CON TARJETAS MODERNAS) --- */
+/* --- SOLUCIONES (TARJETAS INFORMATIVAS FIJAS) --- */
 .soluciones{
 background:#f8fafc;
 padding:90px 10%;
@@ -310,16 +310,11 @@ background: white;
 padding: 30px 20px;
 border-radius: 20px;
 box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-transition: 0.3s;
 border: 1px solid rgba(0,0,0,0.02);
 display: flex;
 flex-direction: column;
 align-items: center;
-}
-
-.sol-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(15, 61, 46, 0.08);
+/* Quitados los efectos de cursor y transformación */
 }
 
 .sol-item h4{
@@ -339,33 +334,12 @@ align-items:center;
 justify-content:center;
 background: #e6f0ec;
 border-radius: 50%;
-transition: 0.3s;
-}
-
-.sol-item:hover .icon {
-  background: #0f3d2e;
-}
-
-.sol-item:hover .icon svg {
-  fill: white;
-  stroke: white;
-}
-
-.sol-item:hover .icon svg circle,
-.sol-item:hover .icon svg path {
-  stroke: white;
-  fill: white;
-}
-
-/* Forzar que cambie el stroke interno del mundo */
-.sol-item:hover .icon svg [stroke="#0f3d2e"] {
-  stroke: white !important;
+/* El diseño se mantiene limpio e inmóvil */
 }
 
 .icon svg{
 width:36px;
 height:36px;
-transition: 0.3s;
 }
 
 /* --- INFO DESTACADA --- */
@@ -506,7 +480,7 @@ form button:hover{
   transform: translateY(-1px);
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER CON ENLACES CORREGIDOS --- */
 .footer{
 background:#0f3d2e;
 color:white;
@@ -536,8 +510,19 @@ position: relative;
 .footer-col p{
 margin:10px 0;
 font-size:14px;
-opacity:0.8;
+opacity:0.9;
 line-height: 1.5;
+}
+
+.footer-col a{
+color: white !important;
+text-decoration: none !important;
+transition: 0.2s;
+display: inline-block;
+}
+
+.footer-col a:hover {
+opacity: 0.8;
 }
 
 .logo-col h2{
@@ -564,7 +549,7 @@ opacity:0.6;
 /* --- DISEÑO ALTAMENTE OPTIMIZADO PARA MÓVILES --- */
 @media(max-width:768px){
   header {
-    flex-direction: row; /* Mantenemos orden horizontal elegante */
+    flex-direction: row;
     justify-content: space-between;
     padding: 15px 5%;
     gap: 10px;
@@ -576,14 +561,13 @@ opacity:0.6;
     gap: 12px;
   }
   nav a {
-    display: none; /* Ocultamos el enlace plano 'Inicio' para no saturar */
+    display: none;
   }
   .btn {
     padding: 10px 18px;
     font-size: 13px;
   }
   
-  /* Formulario flotante en móvil tipo modal centrado */
   .dropdown-content {
     position: fixed;
     top: 85px;
@@ -685,7 +669,7 @@ opacity:0.6;
     text-align: center;
   }
   .footer-col h3 {
-    margin-bottom: 12px;
+    text-align: center;
   }
   
   .whatsapp-float {
@@ -696,7 +680,6 @@ opacity:0.6;
   }
 }
 
-/* REGLA REPETICIÓN TABLET */
 @media(max-width:900px) and (min-width:769px){
   .sol-grid{
     grid-template-columns:repeat(2,1fr);
@@ -723,7 +706,7 @@ opacity:0.6;
 <a href="#" class="btn" onclick="toggleDropdown(event)">Contáctanos ▾</a>
 <div class="dropdown-content">
   <h3>Quiero que me contacten</h3>
-  <p>Usaremos los datos para comunicarnos contigo y asesorarte en tu crédito.</p>
+  <p>Usaremos los datos para comunicarnos contigo y consultar en centrales de riesgo.</p>
   
   <form id="contactoRapidoForm">
     <label style="font-size:12px; font-weight:700; color:#0f3d2e; display:block; margin-bottom:8px;">¿Cuál es tu situación laboral actual? *</label>
@@ -835,7 +818,7 @@ opacity:0.6;
 </div>
 <div class="sol-item">
 <div class="icon"><svg viewBox="0 0 24 24" fill="#0f3d2e">
-<path d="M16 11c1.66 0 3-1.34 3-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.96 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/>
+<path d="M16 11c1.66 0 3-1.34 3-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.02.05 1.16.84 1.97 1.96 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/>
 </svg></div>
 <h4>Comprometidos con la inclusión financiera</h4>
 </div>
@@ -854,7 +837,7 @@ opacity:0.6;
 </div>
 <div>
 <h4>Conoce Más de Nuestro Portafolio</h4>
-<p>En Relief Crediticio trabajamos para brindarte soluciones financieras responsables, transparentes y adaptadas a tu realidad económica.</p>
+<p>En Relief Crediticio trabajamos para brindarte soluciones financieras responsables, transparentes y adaptadas a tu reality económica.</p>
 </div>
 </div>
 <div class="info-item">
@@ -914,9 +897,9 @@ Te ayudamos a elegir la opción que mejor se adapte a tu capacidad de pago y obj
 </div>
 <div class="footer-col">
 <h3>Contacto</h3>
-<p>3175012956</p>
-<p>+57 6023125831</p>  
-<p>reliefcrediticio@gmail.com</p>
+<p><a href="tel:3175012956">3175012956</a></p>
+<p><a href="tel:+576023125831">+57 6023125831</a></p>  
+<p><a href="mailto:reliefcrediticio@gmail.com">reliefcrediticio@gmail.com</a></p>
 </div>
 <div class="footer-col">
 <h3>Legal</h3>
@@ -939,97 +922,4 @@ document.getElementById("contactDropdown").classList.toggle("active");
 }
 
 document.addEventListener("click", function(e){
-var dropdown = document.getElementById("contactDropdown");
-if(!dropdown.contains(e.target)){
-dropdown.classList.remove("active");
-}
-});
-
-/* Lógica selección situación laboral */
-function seleccionarSituacion(elemento, valor) {
-  document.querySelectorAll('.situacion-btn').forEach(btn => btn.classList.remove('active'));
-  elemento.classList.add('active');
-  document.getElementById('contactSituacion').value = valor;
-}
-
-/* Envío formulario de contacto rápido (HEADER) */
-document.getElementById("contactoRapidoForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  var situacion = document.getElementById("contactSituacion").value;
-  var convenio = document.getElementById("contactConvenio").value;
-  var documento = document.getElementById("contactDocumento").value;
-  var nombre = document.getElementById("contactNombre").value;
-  var correo = document.getElementById("contactCorreo").value;
-  var celular = document.getElementById("contactCelular").value;
-
-  if(!situacion){
-    alert("Por favor, selecciona tu situación laboral actual.");
-    return;
-  }
-
-  var mensaje = "Hola, solicito contacto desde el formulario rápido.%0A%0A" +
-    "Situación laboral: " + situacion + "%0A" +
-    "Tipo de convenio: " + convenio + "%0A" +
-    "Documento: " + documento + "%0A" +
-    "Nombre completo: " + nombre + "%0A" +
-    "Correo: " + correo + "%0A" +
-    "Celular: " + celular;
-
-  var url = "https://wa.me/573175012956?text=" + mensaje;
-  window.open(url, "_blank");
-});
-
-/* SLIDER DINÁMICO */
-let sliderIndex = 0;
-const slider = document.querySelector(".slides");
-const slides = document.querySelectorAll(".slide");
-const dotsContainer = document.querySelector(".slider-dots");
-
-slides.forEach((_,index)=>{
-let dot = document.createElement("span");
-dot.classList.add("dot");
-if(index===0) dot.classList.add("active");
-dot.addEventListener("click",()=>{
-sliderIndex=index;
-updateSlider();
-});
-dotsContainer.appendChild(dot);
-});
-
-function updateSlider(){
-slider.style.transform = `translateX(-${sliderIndex * 100}%)`;
-document.querySelectorAll(".dot").forEach(dot=>dot.classList.remove("active"));
-document.querySelectorAll(".dot")[sliderIndex].classList.add("active");
-}
-
-setInterval(()=>{
-sliderIndex=(sliderIndex+1)%slides.length;
-updateSlider();
-},5000);
-
-/* Envío formulario inferior (PENSIONADA) */
-document.getElementById("creditoForm").addEventListener("submit", function(e){
-e.preventDefault();
-
-var nombre = document.getElementById("nombre").value;
-var telefono = document.getElementById("telefono").value;
-var edad = document.getElementById("edad").value;
-var monto = document.getElementById("monto").value;
-var tipo = document.getElementById("tipo").value;
-var solicitud = document.getElementById("solicitud").value;
-
-var mensaje = "Hola, quiero información sobre un crédito.%0A%0A" +
-"Nombre: " + nombre + "%0A" +
-"Teléfono: " + telefono + "%0A" +
-"Edad: " + edad + "%0A" +
-"Monto deseado: " + monto + "%0A" +
-"Tipo de crédito: " + tipo + "%0A" +
-"Tipo de solicitud: " + solicitud;
-
-var url = "https://wa.me/573175012956?text=" + mensaje;
-window.open(url, "_blank");
-});
-</script>
-</body>
-</html>
+var dropdown = document.getElementById
