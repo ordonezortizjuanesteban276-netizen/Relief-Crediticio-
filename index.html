@@ -286,7 +286,7 @@ transition: 0.3s;
 
 .dot.active{background:white; width: 24px; border-radius: 10px;}
 
-/* --- SOLUCIONES (TARJETAS ANIMADAS CON HOVER) --- */
+/* --- SOLUCIONES (TARJETAS ANIMADAS CON HOVER FLUIDO) --- */
 .soluciones{
 background:#f8fafc;
 padding:90px 10%;
@@ -372,7 +372,6 @@ background: #0f3d2e;
 
 .sol-item:hover .icon svg, .sol-item:focus .icon svg {
 fill: white !important;
-stroke: white !important;
 }
 
 .icon svg{
@@ -585,7 +584,7 @@ font-size:14px;
 opacity:0.6;
 }
 
-/* --- DISEÑO ALTAMENTE OPTIMIZADO PARA MÓVILES --- */
+/* --- DISEÑO MÓVIL --- */
 @media(max-width:768px){
   header {
     flex-direction: row;
@@ -857,9 +856,8 @@ opacity:0.6;
 
   <div class="sol-item" tabindex="0">
     <div class="icon">
-      <svg viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="none" stroke="#0f3d2e" stroke-width="2"/>
-        <path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" stroke="#0f3d2e" stroke-width="2" fill="none"/>
+      <svg viewBox="0 0 24 24" fill="#0f3d2e">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/>
       </svg>
     </div>
     <h4>Nuestros asesores llegan a todo el Valle del Cauca</h4>
