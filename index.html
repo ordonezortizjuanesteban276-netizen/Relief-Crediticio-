@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Relief Crediticio | Asesoría Financiera y Créditos en Cali</title>
-<meta name="description" content="Créditos de libranza, consumo y CDT para pensionados, docentes, empleados, militares e independientes. Asesoría financiera responsable en el Valle del Cauca.">
+<meta name="description" content="Créditos de libranza, consumo y CDT para pensionados, docentes, empleados, militares e independientes. Asesoría financiera responsable con cobertura a nivel nacional.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -91,6 +91,10 @@
   .form-row label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:6px;}
   .form-row input,.form-row select{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:.92rem;color:var(--text);background:#fbfcfe;transition:.2s;}
   .form-row input:focus,.form-row select:focus{outline:none;border-color:var(--green);background:#fff;}
+  .toggle-group{display:flex;gap:10px;}
+  .toggle-btn{flex:1;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;background:#fbfcfe;color:var(--text);font-family:inherit;font-size:.92rem;font-weight:600;cursor:pointer;transition:.2s;}
+  .toggle-btn:hover{border-color:var(--green);}
+  .toggle-btn.active{background:var(--green);border-color:var(--green);color:#fff;}
   .hero-form .btn{width:100%;margin-top:6px;}
   .form-note{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--muted);margin-top:14px;}
   .form-note i{color:var(--green);}
@@ -276,9 +280,8 @@
 <section class="hero" id="inicio">
   <div class="container">
     <div>
-      <div class="hero-badge"><i class="fa-solid fa-circle-check"></i> Asesoría financiera regulada en Cali</div>
       <h1>Tu crédito, <em>incluso si has sido reportado.</em></h1>
-      <p class="lead">Acompañamos a pensionados, docentes, empleados, independientes y militares del Valle del Cauca a acceder a créditos de libranza, consumo y CDT con asesoría personalizada, real y sin letra pequeña.</p>
+      <p class="lead">Acompañamos a pensionados, docentes, empleados, independientes y militares a acceder a créditos de libranza, consumo y CDT con asesoría personalizada, real y sin letra pequeña.</p>
       <div class="hero-actions">
         <a href="#contacto" class="btn btn-primary"><i class="fa-solid fa-bolt"></i> Solicita tu crédito</a>
         <a href="https://wa.me/573175012956" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Chatea por WhatsApp</a>
@@ -286,7 +289,7 @@
       <div class="hero-stats">
         <div><strong>+1.000</strong><span>Personas asesoradas</span></div>
         <div><strong>5</strong><span>Perfiles de crédito</span></div>
-        <div><strong>100%</strong><span>Cobertura Valle del Cauca</span></div>
+        <div><strong>100%</strong><span>Cobertura a nivel nacional</span></div>
       </div>
     </div>
 
@@ -319,9 +322,23 @@
             <option value="">Selecciona una opción</option>
             <option>Libranza</option>
             <option>Crédito de consumo</option>
-            <option>CDT</option>
             <option>Tarjeta de crédito</option>
           </select>
+        </div>
+        <div class="form-row">
+          <label>¿Estás reportado en centrales de riesgo?</label>
+          <div class="toggle-group" data-field="reportado">
+            <button type="button" class="toggle-btn" data-value="Sí">Sí</button>
+            <button type="button" class="toggle-btn" data-value="No">No</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>¿Recibiste acompañamiento de algún asesor?</label>
+          <div class="toggle-group" data-field="asesor">
+            <button type="button" class="toggle-btn" data-value="Sí">Sí</button>
+            <button type="button" class="toggle-btn" data-value="No">No</button>
+          </div>
+          <input type="text" id="asesorNombre" placeholder="Escribe el nombre del asesor" style="display:none;margin-top:10px;">
         </div>
         <button type="submit" class="btn btn-primary">Quiero mi crédito</button>
       </form>
@@ -334,7 +351,7 @@
 <div class="trustbar">
   <div class="container">
     <div class="trust-item"><i class="fa-solid fa-building-columns"></i><div><strong>Regulados</strong><span>Cumplimiento normativo vigente</span></div></div>
-    <div class="trust-item"><i class="fa-solid fa-map-location-dot"></i><div><strong>Cali · Valle del Cauca</strong><span>Asesoría presencial y remota</span></div></div>
+    <div class="trust-item"><i class="fa-solid fa-map-location-dot"></i><div><strong>Cobertura nacional</strong><span>Asesoría presencial en Cali y remota en todo el país</span></div></div>
     <div class="trust-item"><i class="fa-solid fa-hand-holding-heart"></i><div><strong>Inclusión financiera</strong><span>Aún si estás reportado</span></div></div>
     <div class="trust-item"><i class="fa-solid fa-user-tie"></i><div><strong>Asesor dedicado</strong><span>Acompañamiento personalizado</span></div></div>
   </div>
@@ -370,7 +387,7 @@
       <div class="why-card reveal"><i class="fa-solid fa-scale-balanced"></i><h4>Transparencia total</h4><p>Tasas, plazos y condiciones claras desde el primer contacto, sin sorpresas.</p></div>
       <div class="why-card reveal"><i class="fa-solid fa-gauge-high"></i><h4>Respuesta rápida</h4><p>Evaluamos tu capacidad de pago y te damos una respuesta ágil.</p></div>
       <div class="why-card reveal"><i class="fa-solid fa-people-group"></i><h4>Trato humano</h4><p>Un asesor real te acompaña en cada paso, no un formulario automático.</p></div>
-      <div class="why-card reveal"><i class="fa-solid fa-map"></i><h4>Cobertura regional</h4><p>Atendemos todo el Valle del Cauca, presencial y en línea.</p></div>
+      <div class="why-card reveal"><i class="fa-solid fa-map"></i><h4>Cobertura nacional</h4><p>Atendemos todo el país, presencial en Cali y en línea a nivel nacional.</p></div>
     </div>
   </div>
 </section>
@@ -495,7 +512,7 @@
       </div>
       <div class="faq-item reveal">
         <div class="faq-q">¿En qué ciudades tienen cobertura? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a"><p>Atendemos todo el Valle del Cauca de forma presencial en nuestra oficina en Cali, y de forma remota en el resto de la región.</p></div>
+        <div class="faq-a"><p>Tenemos cobertura a nivel nacional: atención presencial en nuestra oficina en Cali, y asesoría remota para todo el país.</p></div>
       </div>
     </div>
   </div>
@@ -523,7 +540,7 @@
     <div class="footer-grid">
       <div>
         <a href="#inicio" class="logo" style="margin-bottom:18px;"><span class="logo-badge"><img src="data:image/png;base64,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" alt="Relief Crediticio"></span></a>
-        <p>Acompañamos tu bienestar financiero en todo el Valle del Cauca.</p>
+        <p>Acompañamos tu bienestar financiero en todo el país.</p>
         <div class="footer-social">
           <a href="https://wa.me/573175012956" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -558,7 +575,7 @@
     </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> Relief Crediticio. Todos los derechos reservados.</span>
-      <span>Diseñado para la inclusión financiera del Valle del Cauca.</span>
+      <span>Diseñado para la inclusión financiera a nivel nacional.</span>
     </div>
   </div>
 </footer>
@@ -602,6 +619,28 @@
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
 
+  // Toggle buttons (Sí/No)
+  const toggleState = { reportado: '', asesor: '' };
+  document.querySelectorAll('.toggle-group').forEach(group => {
+    const field = group.dataset.field;
+    group.querySelectorAll('.toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        toggleState[field] = btn.dataset.value;
+        if(field === 'asesor'){
+          const nombreInput = document.getElementById('asesorNombre');
+          if(btn.dataset.value === 'Sí'){
+            nombreInput.style.display = 'block';
+          } else {
+            nombreInput.style.display = 'none';
+            nombreInput.value = '';
+          }
+        }
+      });
+    });
+  });
+
   // Lead form -> WhatsApp redirect
   document.getElementById('creditForm').addEventListener('submit', function(e){
     e.preventDefault();
@@ -609,7 +648,12 @@
     const telefono = document.getElementById('telefono').value.trim();
     const vinculacion = document.getElementById('vinculacion').value;
     const credito = document.getElementById('credito').value;
-    const mensaje = `Hola, soy ${nombre}. Quiero solicitar información sobre un ${credito}. Mi tipo de vinculación es: ${vinculacion}. Mi teléfono de contacto es ${telefono}.`;
+    const reportado = toggleState.reportado || 'No indica';
+    const asesorNombre = document.getElementById('asesorNombre').value.trim();
+    const asesorTexto = toggleState.asesor === 'Sí'
+      ? `Sí, con el asesor ${asesorNombre || '(nombre no indicado)'}`
+      : (toggleState.asesor === 'No' ? 'No' : 'No indica');
+    const mensaje = `Hola, soy ${nombre}. Quiero solicitar información sobre un ${credito}. Mi tipo de vinculación es: ${vinculacion}. ¿Estoy reportado en centrales de riesgo?: ${reportado}. ¿Recibí acompañamiento de un asesor?: ${asesorTexto}. Mi teléfono de contacto es ${telefono}.`;
     const url = `https://wa.me/573175012956?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
   });
